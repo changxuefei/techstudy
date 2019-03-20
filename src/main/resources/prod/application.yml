@@ -1,0 +1,39 @@
+server:
+  port: 8009
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    context-path: /tech
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tech1?characterEncoding=utf-8
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: true
+    show-sql: true
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+  thymeleaf:
+    mode: HTML
+    suffix: .html
+    encoding: UTF-8
+    prefix: classpath:/templates/
+    cache: false
+logging:
+  level:
+    net.northking.app.dao: debug
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.tech.model
+  configuration:
+    mapUnderscoreToCamelCase: true
+
+
